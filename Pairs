@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+using namespace std;
+
+
+vector<int> pairSum(vector<int> data, int sum){
+    vector<int> location;
+    unordered_set<int> s;
+    
+    for(int i : data) {
+        int findData = sum - i;
+        if (s.find(findData) != s.end()) {
+            location.push_back(findData);
+            location.push_back(i);
+            return location;
+        }
+        
+        s.insert(i);
+    }
+    
+    return {};
+}
+
+
+int main(int argc, const char * argv[]) {
+ 
+    vector<int> arr{10, 5, 2 , 3, -6, 9 , 11};
+    int S = 4;
+
+    auto p = pairSum(arr,S);
+    if(p.size()==0){
+        cout<<"No such pair";
+    }
+    else{
+        cout<<p[0]<<","<<p[1]<<endl;
+    }
+
+    return 0;
+}
+
