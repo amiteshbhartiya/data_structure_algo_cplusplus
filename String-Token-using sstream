@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <vector>
+
+using namespace std;
+
+vector<string> tokenization(){
+  
+    string str1;
+    vector <string> resultArr;
+    getline(cin, str1);
+    
+    stringstream ss(str1);
+    
+    
+    string token;
+    while (getline(ss, token, ' ')){
+        resultArr.push_back(token);
+    }
+    
+    return resultArr;
+    
+}
+
+
+int main(int argc, const char * argv[]) {
+    vector <string> output;
+    output = tokenization();
+    
+    for(string str : output) {
+        cout <<str <<endl;
+    }
+
+    return 0;
+}
