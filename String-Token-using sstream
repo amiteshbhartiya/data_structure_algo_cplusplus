@@ -5,17 +5,14 @@
 
 using namespace std;
 
-vector<string> tokenization(){
-  
-    string str1;
-    vector <string> resultArr;
-    getline(cin, str1);
-    
+vector<string> tokenization(string str1, char delimiter){
     stringstream ss(str1);
-    
+
     
     string token;
-    while (getline(ss, token, ' ')){
+    vector <string> resultArr;
+    
+    while (getline(ss, token, delimiter)){
         resultArr.push_back(token);
     }
     
@@ -25,8 +22,11 @@ vector<string> tokenization(){
 
 
 int main(int argc, const char * argv[]) {
+    string str1;
+    getline(cin, str1);
+    
     vector <string> output;
-    output = tokenization();
+    output = tokenization(str1, ',');
     
     for(string str : output) {
         cout <<str <<endl;
