@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+
+bool isSubsequence(string str1, string substr1) {
+    int substr1_size = (int) substr1.length();
+    int str1_size = (int) str1.length();
+    
+    if(substr1_size > str1_size) {
+        return false;
+    }
+    int i = 0;
+    int j = 0;
+    
+    for ( ; i < str1_size; ) {
+        if(str1[i] == substr1[j]) {
+            i++;
+            j++;
+        } else {
+            i++;
+        }
+    }
+    
+    if(i == str1_size && j == substr1_size){
+        return true;
+    }
+    
+    return false;
+}
+
+
+int main(int argc, const char * argv[]) {
+    string str1, substr1;
+    
+    cout << "Enter two strings" << endl;
+    cin >> str1 >> substr1;
+    cout << str1 <<"   "+ substr1 << endl;
+    
+    cout << isSubsequence(str1, substr1);
+  
+    return 0;
+}
