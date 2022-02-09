@@ -11,7 +11,6 @@ int binarySearch(int arr[], int size, int n) {
     
     while(low <= high) {
         mid = floor(low + ((high - low) / 2));
-        cout << arr[mid] << "--" << mid <<endl;
         if(n == arr[mid]) {
             return mid;
         }
