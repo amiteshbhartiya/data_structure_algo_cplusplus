@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstring>
+#include <math.h>
+using namespace std;
+
+
+void printIncrease(int i, int n){
+    
+    if(i > n){
+        return;
+    }
+    printIncrease(i+1, n);
+    cout <<i <<endl;
+    
+}
+
+void printDecrease(int i, int n){
+    
+    if(i > n){
+        return;
+    }
+    cout <<i <<endl;
+    printDecrease(i+1, n);
+    
+}
+
+int main(int argc, const char * argv[]) {
+    int n;
+    cout << "enter the value of n";
+    cin >> n;
+    
+    cout << "##printIncrease##" <<endl;
+    printIncreaseArray(1, n);
+    
+    cout << "##printDecrease##"<<endl;
+    printDecreaseArray(1, n);
+    
+    cout <<endl;
+    
+    return 0;
+}
