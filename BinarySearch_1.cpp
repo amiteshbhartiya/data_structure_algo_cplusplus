@@ -27,7 +27,7 @@ int binarySearch(int arr[], int size, int n) {
 
 
 int main(int argc, const char * argv[]) {
-    int arr[] = {10, 20, 30, 41, 40, 50};
+    int arr[] = {10, 20, 30, 40, 41, 50};
     int size = sizeof(arr)/sizeof(int);
     int n;
     cout << "Enter the number you want to search?" << endl;
