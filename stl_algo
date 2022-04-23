@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#include<vector>
+#include<algorithm>
+
+using namespace std;
+
+
+void show(vector<int> a, int array_size)
+{
+    for (int i = 0; i < array_size; ++i)
+        cout << a[i] << " ";
+}
+
+int main()
+{
+ 
+    vector<int> arr{10,5,2,0,7,6,4};
+    int n = arr.size();
+    
+    //Sort stl algo
+    sort(arr.begin(), arr.end());
+    
+    int k;
+    cout << "Enter value you want to find?";
+    cin >> k;
+
+    if(binary_search(arr.begin(), arr.end(), k)) {
+    	cout << "value find";
+    } else {
+    	cout << "value not find in the list";
+    }
+
+    show(arr, n);
+
+	return 0;
+}
